@@ -1,12 +1,14 @@
 body{
-    background-color: rgb(231, 231, 231)
+    background-color: rgb(247, 247, 247)
 }
 #titulo {
     text-align: center;
+    padding-top: 5px;
 }
 #texto_explicativo{
     margin-top: 15px;
     border-top: solid rgb(9, 186, 209);
+    border-width: 1px;
     padding-top: 30px;
 }
 #texto_explicativo.row{
@@ -19,6 +21,7 @@ body{
     padding: 30px 30px 30px 30px;
     text-align: justify;
     background-color: white;
+    border-width: 2px;
 }
 .texto_two{
     border: solid rgb(9, 186, 209);
@@ -27,6 +30,8 @@ body{
     padding: 20px 20px 33px 20px;
     text-align: justify;
     background-color: white;
+    border-width: 2px;
+    
 }
 .texto_tree{
     border: solid rgb(9, 186, 209);
@@ -36,15 +41,27 @@ body{
     padding: 20px 20px 20px 20px;
     text-align: justify;
     background-color: white;
+    border-width: 2px;
 }
 #conteudo{
     margin-top: 30px;
     border-top: solid rgb(9, 186, 209);
     padding-top: 30px;
+    border-width: 1px;
+    
 }
+
+
 .titulo_card{
     text-align: center;
+    border: solid rgb(9, 186, 209);
+    border-radius: 10px;
+    padding-top: 5px;
+    margin-left: 455px;
+    margin-right: 455px;
+
 }
 .butao_card{
+    padding-top: 15px;
     text-align: center;
 }
