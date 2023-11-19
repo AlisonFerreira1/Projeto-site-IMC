@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imc calculadora</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="IMC.css">
     <script src="IMC.js"></script>
 </head>
@@ -63,19 +65,46 @@
           <h6>Calculadora(IMC)</h6>
         </div>
         <div class="dados">
-          <label for="idade" class="caixa_texto">Digite aqui sua idade atual!</label>
-          <input class="form-control" list="datalistOptions" id="idade" placeholder="idade...">
+          <form id="imcForm" nome="imcForm">
+          <label for="idade" class="caixa_texto">Digite aqui sua idade atual:</label>
+          <input type="number" id="idade" nome="idade" class="form-control" placeholder="idade..." required>
   
-          <label for="altura" class="caixa_texto">Digite aqui sua altura!</label>
-          <input class="form-control" list="datalistOptions" id="altura" placeholder="altura...">
+          <label for="altura" class="caixa_texto">Digite aqui sua altura(em Metros):</label>
+          <input type="number" id="altura" nome="altura" class="form-control" placeholder="altura..." required>
   
           <label for="peso" class="caixa_texto">Digite aqui seu peso!</label>
-          <input class="form-control" list="datalistOptions" id="peso" placeholder="peso...">
+          <input type="number" id="peso" nome="peso" class="form-control" list="datalistOptions" placeholder="peso..." required>
         </div>
         <div class="butao_card">
-          <button type="button" class="btn btn-primary">Primary</button>
+        <input type="submit" value="Calcular" class="btn btn-success">
         </div>
-  
+        </form>
+          <table id="tabelaResultado" class="mt-4" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Plano</th>
+                    <th>Operadora A</th>
+                    <th>Operadora B</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Básico</td>
+                    <td id="planoABasico"></td>
+                    <td id="planoBBasico"></td>
+                </tr>
+                <tr>
+                    <td>Standard</td>
+                    <td id="planoAStandard"></td>
+                    <td id="planoBStandard"></td>
+                </tr>
+                <tr>
+                    <td>Premium</td>
+                    <td id="planoAPremium"></td>
+                    <td id="planoBPremium"></td>
+                </tr>
+            </tbody>
+          </table>
        </div>
     </main>
     
