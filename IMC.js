@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const planoBBasico = 100 + (fatorComorbidade * 10 * (imc / 10));
             const planoBStandard = (150 + (fatorComorbidade * 15)) * (imc/10);
-            const planoBPremium = (200 - (im*10) + (fatorComorbidade * 20)) * (imc/10);
+            const planoBPremium = (200 - (imc*10) + (fatorComorbidade * 20)) * (imc/10);
 
             document.getElementById("planoABasico").textContent = "R$" + planoABasico.toFixed(2);
             document.getElementById("planoAStandard").textContent = "R$" + planoAStandard.toFixed(2);
