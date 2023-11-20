@@ -9,11 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
             const altura = parseFloat(document.getElementById("altura").value);
             const peso = parseFloat(document.getElementById("peso").value);
 
-            const imc = peso / (altura * altura);
+            const imc = peso / ((altura * altura)*0.0001);
              //SE DEIXAR A LÓGICA DE CALCULO IGUAL AO DO ARQUIVO ELE RODA COM O VALOR EX.0.02
             const planoABasico = 100 + idade * (10 * (imc / 10));
-            const planoAStandard = 150 + idade * 15;
-            const planoAPremium = 200 - imc * 10 + idade * 20;
+            const planoAStandard = (150 + (idade * 15))*(imc/10);
+            const planoAPremium = (200 - (imc * 10) + (idade * 20))*(imc/10);
 
             let fatorComorbidade;
             if (imc < 18.5) {
@@ -30,9 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 fatorComorbidade = 30;
             }
 
-            const planoBBasico = 100 + fatorComorbidade * (10 * (imc / 10));
-            const planoBStandard = 150 + fatorComorbidade * 15;
-            const planoBPremium = 200 - imc * 10 + fatorComorbidade * 20;
+            const planoBBasico = 100 + (fatorComorbidade * 10 * (imc / 10));
+            const planoBStandard = (150 + (fatorComorbidade * 15)) * (imc/10);
+            const planoBPremium = (200 - (im*10) + (fatorComorbidade * 20)) * (imc/10);
 
             document.getElementById("planoABasico").textContent = "R$" + planoABasico.toFixed(2);
             document.getElementById("planoAStandard").textContent = "R$" + planoAStandard.toFixed(2);
