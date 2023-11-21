@@ -72,10 +72,12 @@
           <label for="peso" class="caixa_texto">Digite aqui seu peso!</label>
           <input type="number" id="peso" nome="peso" class="form-control" list="datalistOptions" placeholder="peso..." required>
         </div>
+        <br>
         <div class="butao_card">
         <input type="submit" value="Calcular" class="btn btn-success">
         </div>
         </form>
+        <br>
           <table id="tabelaResultado" >
             <thead>
                 <tr>
@@ -100,13 +102,18 @@
                     <td id="planoAPremium">R$</td>
                     <td id="planoBPremium">R$</td>
                 </tr>
+                <tr class="linhaDestaque">
+                  <td>Custo-Benefício</td>
+                  <td id="planoMaisBrtoA">R$</td>
+                  <td id="planoMaisBrtoB">R$</td>
+              </tr>
             </tbody>
           </table>
        </div>
     </main>
-    
+    <br><br><br>
     <footer class="container" id="rodape">
-        <p>Rodapé da página</p>
+        <p>obs:a operadora poderá alterar os valores dos planos sem aviso prévio, para contratar fale com a central de vendas. telefones: 3333-3333 e 9999-9999</p>
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
