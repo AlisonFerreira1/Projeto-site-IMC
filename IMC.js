@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const peso = parseFloat(document.getElementById("peso").value);
 
             const imc = peso / ((altura * altura)*0.0001);
-             //SE DEIXAR A LÓGICA DE CALCULO IGUAL AO DO ARQUIVO ELE RODA COM O VALOR EX.0.02
-            const planoABasico = 100 + idade * (10 * (imc / 10));
+
+            const planoABasico = 100 + (idade * 10 * (imc / 10));
             const planoAStandard = (150 + (idade * 15))*(imc/10);
             const planoAPremium = (200 - (imc * 10) + (idade * 20))*(imc/10);
 
@@ -33,6 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const planoBBasico = 100 + (fatorComorbidade * 10 * (imc / 10));
             const planoBStandard = (150 + (fatorComorbidade * 15)) * (imc/10);
             const planoBPremium = (200 - (imc*10) + (fatorComorbidade * 20)) * (imc/10);
+            const maisBaratoA = Math.min(planoABasico, planoAStandard, planoAPremium);
+            const maisBaratoB = Math.min(planoBBasico, planoBStandard, planoBPremium);
 
             document.getElementById("planoABasico").textContent = "R$" + planoABasico.toFixed(2);
             document.getElementById("planoAStandard").textContent = "R$" + planoAStandard.toFixed(2);
@@ -41,7 +43,9 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("planoBBasico").textContent = "R$" + planoBBasico.toFixed(2);
             document.getElementById("planoBStandard").textContent = "R$" + planoBStandard.toFixed(2);
             document.getElementById("planoBPremium").textContent = "R$" + planoBPremium.toFixed(2);
-
+ 
+            document.getElementById("planoMaisBrtoA").textContent = "R$" + maisBaratoA.toFixed(2);
+            document.getElementById("planoMaisBrtoB").textContent = "R$" + maisBaratoB.toFixed(2);
 
             document.getElementById("tabelaResultado").style.display = "table";
         });
