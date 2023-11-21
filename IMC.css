@@ -99,3 +99,9 @@ font-family: 'Montserrat', sans-serif;
 tr:nth-child(even){
     background-color: #eeeeee;
 }
+
+.linhaDestaque {
+ 
+    color: #05834e;
+    font-weight: bold; 
+}
